@@ -30,6 +30,7 @@ COPY --from=publish /app/publish/web ./web
 
 RUN apt-get update && apt-get install -y supervisor
 RUN apt-get update && apt-get install -y sudo
+RUN apt-get install -y curl less
 
 RUN sudo cp ./web/Certificates/ca.crt /usr/local/share/ca-certificates/ca.crt
 RUN sudo update-ca-certificates
